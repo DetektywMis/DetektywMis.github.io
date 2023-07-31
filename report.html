@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Tektur:wght@600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+  <meta http-equiv="Content-Language" content="pl">
+  <meta charset="UTF-8">
+</head>
+
+<body onload="nextQuestion()">
+
+  <div class="header">
+    <img src="resources/Logo.png" class="logo">
+
+
+  </div>
+
+  <div id="login" class="login-container" >
+    <p id="wrongPsw">Nieprawidłowy użytkownik i/lub hasło!</p>
+
+    <p><label class = "login-text" for="uname"><b>Imię i Nazwisko</b></label></p>
+    <p><input type="text" placeholder="Użytkownik" name="uname" id="username-id" required></p>
+
+    <p> <label class = "login-text" for="psw"><b>Hasło</b></label></p>
+    <p><input type ="password" placeholder="Hasło" name="psw" id= "password-id" required></p>
+
+    <button class = "button" id ="login-button-id" type="submit" onclick="loginHandler()">Zatwierdź</button>
+    
+
+
+  </div>
+  <div id="congratulations">
+    <img src="resources/Congratulations.png">
+    
+    
+
+
+  </div>
+
+
+  <div id="endgameModal" class="endgame-modal">
+    <span id="closeBtn" class="close" onclick="closeModal()">&times;</span>
+    <div class="report-content">
+      <div class="endgame-content">
+
+
+        <p>Gratulacje Detektywi!</p>
+        <p>Udało wam się odpowiedzieć na <a id="questions-answered-id"></a></p>
+        
+        <p>Dzięki ciężkiej pracy i nieszablonowemu myśleniu udało się Wam namierzyć niebezpiecznego radzieckiego agenta.
+          A
+          raczej, osławioną już w naszej jednostce, Agentkę W. Latami jej ścieżki przecierały się z Wami, drodzy
+          Detektywi, jednak Wy byliście oślepieni przez jej niepowtarzalny urok osobisty. Bawiła się z Wami, wyjeżdżając
+          w
+          te same miejsca co Wy, budując te same wspomnienia. Wasz spryt i wyśmienita pamięć pozwoliły prześledzić gdzie
+          podziewała się w ciągu ostatnich dziesięciu lat. Zagraniczne Jednostki Zwiadowcze będą ją mieć na oku,
+          zwracając
+          szczególną uwagę gdy tylko spróbuje przekroczyć granice naszego państwa. Słyszałem pogłoski, że będę musiał
+          oddelegować kogoś z mojego oddziału by nie odstępował jej na krok. Podobno wyrok w tej sprawie zapadnie 24
+          sierpnia.</p>
+        
+
+        <p>
+          Tymczasem przed Wami ostatnie zadanie. Rządowy Wydział Cyberbezpieczeństwa nie był w stanie dotrzeć do
+          zawartości przechwyconego przez nią dysku. Idioci. Kod dostępu jest unikatowy, lecz jestem przekonany, że
+          ogrom
+          sprytu jakim wykazaliście się w trakcie dochodzenia umożliwi Wam jego otwarcie. Moje źródło wskazuje, że W
+          znała
+          ten kod i co więcej, przez wszystkie te lata zostawiała w różnych miejscach wskazówki. Sam nie wiem co mam o
+          tym
+          sądzić, niewiele z tego rozumiem. Niemniej jednak, życzę Wam powodzenia, jestem pewien, że Wasza determinacja
+          i
+          profesjonalizm pozwoli raz na zawsze zakończyć tę sprawę i o niej zapomnieć.</p>
+        
+
+       <p> Żegnajcie,<br>
+        Detektyw Miś</p>
+      </div>
+      <div margin="auto">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="quiz-container" id="quiz">
+
+    <div class="quiz-question" id="question"></div>
+
+    <!-- <div class="quiz-answer" onclick="answerClick();">A</div>
+    <div class="quiz-answer">B</div>
+    <div class="quiz-answer">C</div>
+    <div class="quiz-answer">D</div> -->
+    <span>
+      <input type="radio" id="answer-one" name="answer" class="quiz-answer">
+      <label for="answer-one" class="label" onclick="answered(0)" id="answer-one-label"></label>
+
+    </span>
+    <span>
+
+      <input type="radio" id="answer-two" name="answer" class="quiz-answer">
+      <label for="answer-two" class="label" onclick="answered(1)" id="answer-two-label"></label>
+    </span>
+
+    <span>
+      <input type="radio" id="answer-three" name="answer" class="quiz-answer">
+      <label for="answer-three" class="label" onclick="answered(2)" id="answer-three-label"></label>
+
+    </span>
+
+    <span>
+      <input type="radio" id="answer-four" name="answer" class="quiz-answer">
+      <label for="answer-four" class="label" onclick="answered(3)" id="answer-four-label"></label>
+
+    </span>
+
+
+
+
+    <div class="quiz-button-container">
+
+      <button id="quizBtn" class="button" onclick="checkQuestion()">Sprawdź</button>
+      <button id="nextBtn" class="button" onclick="nextQuestion()">Następne pytanie</button>
+    </div>
+
+
+
+
+
+  </div>
+
+  <script src="script3.js"> </script>
+
+</body>
+
+</html>

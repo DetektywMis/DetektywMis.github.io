@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+  <meta http-equiv="Content-Language" content="pl">
+  <meta charset="UTF-8">
+</head>
+
+<body onload="filesParse()">
+
+  <div class="header">
+    <img src="resources/Logo.png" class="logo">
+    <div class="searchbar">
+      <input id="search1" type="text" placeholder="Wyszukaj..." name="szukaj">
+      <button id="myBtn" class="button" onclick="openModal()"><i class="fa fa-search"></i></button>
+
+    </div>
+
+  </div>
+  <div class="report-container">
+    <button id="reportBtn" class="button" onclick="report()">Raport</button>
+  </div>
+
+
+
+  <div id="errorModal" class="error">
+    <span id="closeBtn" class="close" onclick="closeModal()">&times;</span>
+    <div class="errorContent">
+      Nie znaleziono pliku!
+    </div>
+  </div>
+
+  <div id="reportModal" class="report-modal">
+    <span id="closeBtn" class="close" onclick="closeModal()">&times;</span>
+    <div class="report-content">
+      <p>Jesteś gotowy złożyć raport?</p>
+      <div margin = "auto">
+        <button id="yesBtn" class="button" onclick="location.href='/report.html'"> TAK</button>
+        <button id="noBtn" class="button" onclick="closeModal()"> NIE</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div id="imgViewer" class="imageViewer">
+    <!-- <span class="close" onclick="closeModal()">&times;</span> -->
+
+    <div id="img" class="img-magnifier-container">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <img class="myImageClass" id="myimage">
+    </div>
+  </div>
+
+  <div id="videoViewer" class="videoViewer">
+    <!-- <span class="close" onclick="closeModal()">&times;</span> -->
+
+    <div id="video" class="video-container">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <video controls width="1400" class="myVideoClass" id="myVideo">
+        <source class="videoSourceClass" id="videoSource" src="resources/Akta/@698A.webm" type="video/webm">
+
+      </video>
+    </div>
+  </div>
+
+
+
+  <div id="modelViewer" class="model">
+    <div id="model-content-id" class="model-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+
+
+      <model-viewer id="model-viewer" src="" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+        poster="poster.webp" shadow-intensity="1">
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+          View in your space
+        </button>
+        <div id="ar-prompt">
+          <img src="./model/ar_hand_prompt.png">
+        </div>
+      </model-viewer>
+      <script src="./model/script.js"></script>
+      <!-- Loads <model-viewer> for browsers: -->
+      <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <script src="script2.js"> </script>
+
+
+</body>
+
+</html>
