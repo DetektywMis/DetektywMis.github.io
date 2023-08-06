@@ -436,7 +436,12 @@ model-viewer>#ar-prompt>img {
   padding: 10px;
 }
 
+#reportBtn {
+  z-index: 0;
+}
+
 .button {
+  z-index: 2;
   position: relative;
   left: 50%;
   font-size: x-large;
@@ -556,7 +561,8 @@ input[type="radio"] {
 input[type="radio"]:checked~.option {
   background: rgb(238, 175, 175);
 }
-input[type="radio"]:focus{
+
+input[type="radio"]:focus {
   background: blue;
 }
 
@@ -565,7 +571,7 @@ input[type="radio"]:focus{
   left: initial;
 }
 
-#nextBtn{
+#nextBtn {
   float: right;
   left: initial;
 }
@@ -573,7 +579,7 @@ input[type="radio"]:focus{
 .endgame-modal {
   display: none;
   z-index: 1;
-  position:relative;
+  position: relative;
   /* Stay in place */
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -589,14 +595,15 @@ input[type="radio"]:focus{
   padding: 10px;
 }
 
-.endgame-content{
+.endgame-content {
   font-family: 'Caveat', cursive;
   text-align: justify;
 }
-.login-container{
+
+.login-container {
   display: none;
   z-index: 1;
-  position:relative;
+  position: relative;
   /* Stay in place */
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -613,7 +620,7 @@ input[type="radio"]:focus{
   font-family: 'Tektur', cursive;
 }
 
-.login-text{
+.login-text {
   height: fit-content;
   border-style: solid;
   border-width: 3px;
@@ -635,14 +642,15 @@ input[type="radio"]:focus{
 
 }
 
-#username-id{
+#username-id {
   font-size: x-large;
 }
 
-#password-id{
+#password-id {
   font-size: x-large;
 }
-#login-button-id{
+
+#login-button-id {
   font-size: x-large;
   left: initial;
   padding: 3px;
@@ -651,17 +659,18 @@ input[type="radio"]:focus{
 }
 
 
-#wrongPsw{
+#wrongPsw {
   display: none;
   color: red;
   font-size: large;
   letter-spacing: 2px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-#congratulations{
+
+#congratulations {
   display: none;
   z-index: 1;
-  position:relative;
+  position: relative;
   /* Stay in place */
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -677,4 +686,42 @@ input[type="radio"]:focus{
   padding: 50px;
   font-family: 'Tektur', cursive;
   top: -40px;
+}
+
+.start-class {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+
+
+.start-class-clicked {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+ 
+}
+
+#start-image-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  width: fit-content;
+
+}
+#Start-image{
+  border-color: #24433f;
+  border-radius: 10px;
+  border-width: 10px;
+  width: 1980px;
+}
+.start-image-class-clicked{
+  transform: translateY(-100%);
+  transition: all 3s;
 }

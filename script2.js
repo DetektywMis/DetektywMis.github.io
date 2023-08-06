@@ -2,12 +2,21 @@ var names = [];
 var extensions = [];
 
 var input = document.getElementById("search1");
+document.addEventListener('keydown', evt =>{
+  if (evt.key ==="Escape"){
+    evt.preventDefault();
+    closeModal();
+  }
+})
+
 input.addEventListener("keypress",function(event){
+  // console.log(event.key);
   if(event.key ==="Enter"){
 
     event.preventDefault();
     document.getElementById("myBtn").click();
   }
+  
 });
 
 function filesParse() {
@@ -17,7 +26,7 @@ function filesParse() {
   request.send(null);
 
   var JSONobj = JSON.parse(request.responseText);
-  console.log();
+  // console.log();
   // for (let i =0;i<=Object.keys(JSONobj.files).length;i++){
   // names.push (JSONobj.files[i].name);
   // extensions.push(JSONobj.files[i].ext);
@@ -36,10 +45,10 @@ function filesParse() {
     names.push(value.name);
     extensions.push(value.ext);
   });
-  console.log(extensions[names.indexOf("@691A")]);
+  // console.log(extensions[names.indexOf("@691A")]);
 
 
-  console.log(extensions);
+  // console.log(extensions);
 
 
 
@@ -62,7 +71,7 @@ function openModal() {
   close.style.display = "inline"
 
   wart = document.getElementById("search1").value;
-  console.log(wart);
+  // console.log(wart);
 
 
   if (names.indexOf(wart) === -1) {
@@ -226,5 +235,21 @@ function magnify(imgID, zoom) {
     return { x: x, y: y };
   }
 }
+
+function startGame(){
+  document.getElementById("start-id").style.backgroundColor = "rgba(255, 255, 255, 0)";
+  document.getElementById("start-button").style.display = "none";
+  document.getElementById("start-image-container").classList.toggle("start-image-class-clicked");
+ 
+ setTimeout(function(){
+  document.getElementById("start-id").style.display = "none";
+
+
+ },3000);
+
+
+}
+
+
 
 

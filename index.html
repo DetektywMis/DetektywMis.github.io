@@ -20,6 +20,7 @@
 <body onload="filesParse()">
 
   <div class="header">
+
     <img src="resources/Logo.png" class="logo">
     <div class="searchbar">
       <input id="search1" type="text" placeholder="Wyszukaj..." name="szukaj">
@@ -33,6 +34,17 @@
   </div>
 
 
+  <div id="start-id" class="start-class">
+    <div id="start-image-container" class="start-image-class">
+      <img src="resources/Start" id="Start-image">
+      <div class="start-button-container">
+        <button id="start-button" class="button" onclick="startGame()">START</button>
+      </div>
+    </div>
+   
+
+  </div>
+
 
   <div id="errorModal" class="error">
     <span id="closeBtn" class="close" onclick="closeModal()">&times;</span>
@@ -45,7 +57,7 @@
     <span id="closeBtn" class="close" onclick="closeModal()">&times;</span>
     <div class="report-content">
       <p>Jesteś gotowy złożyć raport?</p>
-      <div margin = "auto">
+      <div margin="auto">
         <button id="yesBtn" class="button" onclick="location.href='/report.html'"> TAK</button>
         <button id="noBtn" class="button" onclick="closeModal()"> NIE</button>
       </div>
